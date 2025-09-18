@@ -20,7 +20,7 @@ def root() -> Dict[str, str]:
     """
     return {
         "message": "Welcome to hello-copilot FastAPI app!",
-        "endpoints": ["/health", "/sum?a=1&b=2"]
+        "endpoints": "/health, /sum?a=1&b=2"
     }
 
 @app.get("/health", response_model=Dict[str, str])
