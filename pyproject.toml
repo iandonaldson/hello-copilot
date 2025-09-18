@@ -1,0 +1,26 @@
+# Create a minimal pyproject for a FastAPI app using uvicorn and pytest.
+# Include fastapi, uvicorn, httpx, pytest as dependencies/dev-deps.
+# Use hatchling or setuptools to keep it simple.
+
+[project]
+name = "hello-copilot"
+version = "0.1.0"
+description = "A simple skeleton Python project."
+authors = ["Your Name <your.email@example.com>"]
+dependencies = [
+	"fastapi",
+	"uvicorn",
+	"httpx"
+]
+
+[project.optional-dependencies]
+dev = [
+	"pytest"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
