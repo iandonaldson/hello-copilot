@@ -5,11 +5,23 @@
 
 
 
+
 from fastapi import FastAPI, Query
 from typing import Dict
 from fastapi.responses import JSONResponse
 
+
 app = FastAPI()
+
+@app.get("/")
+def root() -> Dict[str, str]:
+    """
+    Root endpoint. Returns a welcome message and available endpoints.
+    """
+    return {
+        "message": "Welcome to hello-copilot FastAPI app!",
+        "endpoints": ["/health", "/sum?a=1&b=2"]
+    }
 
 @app.get("/health", response_model=Dict[str, str])
 def health() -> Dict[str, str]:
